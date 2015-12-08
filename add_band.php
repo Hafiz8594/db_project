@@ -6,6 +6,7 @@ include_once 'common.php';        //*
 include_once 'db.php';            //*     
 session_start();                  //*
 //***********************************
+$link = mysqli_connect("localhost", "root", "", "database_project");
 
 //Retrieve the POST variables from the form sent
 $bandID = $_POST['bandid'];
@@ -17,8 +18,11 @@ $bandYear = $_POST['bandyear'];
 $sql = "INSERT INTO band (band_id, name, info, year) 
 VALUES ('$bandID','$bandName', '$bandInfo', '$bandYear')";
 
-$result = mysql_query($sql);
+$result = mysqli_query($link, $sql);
 
-echo "Band Added!";
+
+header("Location: userwelcome.php");
+
+
 
 ?>
