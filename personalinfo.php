@@ -13,11 +13,11 @@
 			<table id="personalinfo">
 				<tr>
 					<td><h3>First Name: </h3> <?php  echo $_SESSION['first_name']; ?></td>
-					<td><h3>Last Name: </h3></td>
+					<td><h3>Last Name: </h3> <?php echo $_SESSION['last_name'];?></td>
 				</tr>
 				<tr>
-					<td><h3>DOB: </h3></td>
-					<td><h3>Email: </h3></td>
+					<td><h3>DOB: </h3> <?php echo $_SESSION['age'] ?>;></td>
+					<td><h3>Email: </h3> <?php echo $_SESSION['email']?>></td>
 				</tr>
 			</table>
 		</div>
