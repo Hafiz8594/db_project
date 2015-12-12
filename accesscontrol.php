@@ -43,8 +43,18 @@ the script grabs the values and checks if they are a valid user in the database.
 
 dbConnect("database_project"); // Need this before using mysql_query statements!!!
 
+
+// SET ALL THE IMPORTANT SESSION VARIABLES BELOW
+
 $_SESSION['username'] = $username;
 $_SESSION['pwd'] = $pwd;
+
+$sql = "SELECT user_id FROM user WHERE
+		username = '$username'";
+
+$result = mysql_query($sql);
+
+$_SESSION['userid'] = mysql_result($result,0,'user_id');
 
 $sql = "SELECT first_name FROM user WHERE
 		username = '$username'";
@@ -58,6 +68,19 @@ $result = mysql_query($sql);
 
 $_SESSION['last_name'] = mysql_result($result,0,'last_name');
 
+$sql = "SELECT age FROM user WHERE
+		username = '$username'";
+
+$result = mysql_query($sql);
+
+$_SESSION['age'] = mysql_result($result,0,'age');
+
+$sql = "SELECT email FROM user WHERE
+		username = '$username'";
+
+$result = mysql_query($sql);
+
+$_SESSION['email'] = mysql_result($result,0,'email');
 
 //dbConnect("database_project");
 $sql = "SELECT * FROM user WHERE
