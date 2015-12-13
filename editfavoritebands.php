@@ -27,7 +27,7 @@ if (!$result) {
 	echo 'There are no comments about bands listed in the database.';
 } 
 else {
-	echo 'Bands are listed below. Please press button in the right column to add/delete from your favorite bands list.';
+	echo '<center>Bands are listed below. Please press button in the right column to add/delete from your favorite bands list.<br /><br /></center>';
 	echo'<center><table><tr><th>Band Name</th><th>Year</th><th>Info</th><th>Albums</th><th>Performances</th></tr>';
 	while ($row = mysql_fetch_array($result)){
 		echo "<tr>";
@@ -47,6 +47,19 @@ else {
 			echo "$getAlbumsRow[album_name]($getAlbumsRow[year]), ";
 		}
 		echo "</td>";
+
+		$getPerformancesResult = mysql_query("SELECT * FROM band_performance WHERE band_id = $row[band_id]");
+		echo "<td>";
+		while ($getPerformancesRow = mysql_fetch_array($getPerformancesResult)){
+			$getPerformanceInfoResult = mysql_query("SELECT * FROM performance WHERE $getPerformancesRow[performance_id] = performance_id");
+			$performanceName = mysql_result($getPerformanceInfoResult,0,'name');
+			$performanceDate = mysql_result($getPerformanceInfoResult,0,'date');
+			echo "$performanceName ($performanceDate), ";
+		}
+		echo "</td>";
+
+
+
 		echo "</tr>";
 		
 
@@ -63,7 +76,8 @@ else {
 		// echo "Comment: $row[content]<br />";
 		// echo "<hr />";
 	}
-	echo'<center><button type="button" onclick="window.history.back()">Go Back</button></center>';
+	echo "</table>";
+	echo '<br /><center><button type="button" onclick="window.history.back()">Go Back</button></center>';
 }
 
 ?>
