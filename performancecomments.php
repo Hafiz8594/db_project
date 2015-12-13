@@ -6,11 +6,11 @@ include_once 'accesscontrol.php';
 
 <html>
 <head>
-  <title>Band Comments</title>
+  <title>Performance Comments</title>
   <link rel = "stylesheet" href = "style.css">
 </head>
   <body>
-  	<center><h1>Band Comments</h1></center>
+  	<center><h1>Performance Comments</h1></center>
 
 <?php
 
@@ -18,22 +18,22 @@ dbConnect("database_project");
 
 $id = $_SESSION['userid'];
 
-$sql = "SELECT * FROM band_comment";
+$sql = "SELECT * FROM performance_comment";
 $result = mysql_query ($sql);
 
 if (!$result) {
 	error('Error querying database.');
 } else if(mysql_num_rows($result) == 0) {
-	echo 'There are no comments about bands listed. To make a comment, please click here: <a href="makebandcomment.php">ADD COMMENT</a><br /><br />';
+	echo 'There are no comments about performances listed. To make a comment, please click here: <a href="makeperformancecomment.php">ADD COMMENT</a><br /><br />';
 	echo'<center><button type="button" onclick="window.history.back()">Go Back</button></center>';
 } 
 else {
 	echo 'To add a comment, please click here: <a href="makebandcomment.php">ADD COMMENT</a><br /><br />';
 	while ($row = mysql_fetch_array($result)){
-		$band_name_result = mysql_query("SELECT * FROM band WHERE band_id = $row[band_id]");
-		$band_name = mysql_result($band_name_result, 0, 'name');
+		$performance_name_result = mysql_query("SELECT * FROM performance WHERE performance_id = $row[performance_id]");
+		$performance_name = mysql_result($band_name_result, 0, 'name');
 
-		echo "Band: <i>$band_name</i><br />";
+		echo "Performance: <i>$performance_name</i><br />";
 
 		$username_result = mysql_query("SELECT * FROM user WHERE user_id = $row[user_id]");
 		$username = mysql_result($username_result, 0, 'username');

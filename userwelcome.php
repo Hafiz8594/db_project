@@ -10,7 +10,7 @@
   <form name="MY Form"action="Login">
 	<fieldset>
 
-		<legend>'Hello <?php echo $_SESSION['first_name']; ?> </legend>
+		<legend>Hello <?php echo $_SESSION['first_name']; ?> </legend>
 		<center>
 			<table>
 				<tr>
@@ -23,7 +23,7 @@
 				</tr>
 				<tr>
 					<td><button onClick = "location.href='bandcomments.php'" style="width: 200px; height: 60px" type="button">Band Comments</button></td>
-					<td><button onClick = "location.href='signupPage.html'" style="width: 200px; height: 60px" type="button">Performance Comments</button></td>
+					<td><button onClick = "location.href='performancecomments.php'" style="width: 200px; height: 60px" type="button">Performance Comments</button></td>
 				</tr>
 			</table>
 		</center>
