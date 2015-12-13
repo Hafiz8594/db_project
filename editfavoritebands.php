@@ -28,7 +28,7 @@ if (!$result) {
 } 
 else {
 	echo '<center>Bands are listed below. Please press button in the right column to add/delete from your favorite bands list.<br /><br /></center>';
-	echo'<center><table><tr><th>Band Name</th><th>Year</th><th>Info</th><th>Albums</th><th>Performances</th></tr>';
+	echo'<center><table><tr><th>Band Name</th><th>Year</th><th>Info</th><th>Albums</th><th>Performances</th><th>Add/Delete</th></tr>';
 	while ($row = mysql_fetch_array($result)){
 		echo "<tr>";
 		$bandname = "$row[name]";
@@ -44,7 +44,7 @@ else {
 		$getAlbumsResult = mysql_query("SELECT * FROM album WHERE band_id = $row[band_id]");
 		echo "<td>";
 		while ($getAlbumsRow = mysql_fetch_array($getAlbumsResult)){
-			echo "$getAlbumsRow[album_name]($getAlbumsRow[year]), ";
+			echo "$getAlbumsRow[album_name]($getAlbumsRow[year])<br />";
 		}
 		echo "</td>";
 
@@ -58,7 +58,12 @@ else {
 		}
 		echo "</td>";
 
-
+		$addOrDelete = mysql_query("SELECT * FROM user_band WHERE $id = user_id AND $row[band_id] = band_id");
+		if(mysql_num_rows($addOrDelete) == 0) {
+			echo "<td><button>Add</button></td>";
+		} else {
+			echo "<td><button>Delete</button></td>";
+		}
 
 		echo "</tr>";
 		
