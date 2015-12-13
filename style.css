@@ -26,6 +26,14 @@ h1, h3 {
 	font-weight: bold;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	display: inline-block;
+}
+
+h4 {
+	margin: 3px;
+}
+
 div.centered {
     height: 10em;
     position: relative;
