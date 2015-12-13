@@ -16,6 +16,11 @@ table#personalinfo h3 {
 	width: 100px;
 }
 
+button {
+	font-size: 18px;
+	padding: 1px 6px;
+}
+
 h1, h3 {
 	color: blue;
 	font-weight: bold;
