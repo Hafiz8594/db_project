@@ -24,9 +24,12 @@ $result = mysql_query ($sql);
 if (!$result) {
 	error('Error querying database.');
 } else if(mysql_num_rows($result) == 0) {
-	echo'You have no favorite bands listed. If you would like to add favorite bands, please visit this <a href="bands.php">link</a>.';
+	echo '<center>';
+	echo'You have no favorite bands listed. If you would like to add favorite bands, please click here: <a href="editfavoritebands.php">EDIT FAVORITE BANDS</a><br /><br />.';
+	echo'</center>';
 } 
 else {
+	echo '<center>To edit your favorite bands, please click here: <a href="editfavoritebands.php">EDIT FAVORITE BANDS</a><br /><br /></center>';
 	echo'<center><table>
 	<tr><th>Name</th><th>Info</th><th>Year</th></tr>';
 	while ($row = mysql_fetch_array($result)){
@@ -41,7 +44,6 @@ else {
 	}
 	echo '</table></center><br />';
 	echo'<center><button type="button" onclick="window.history.back()">Go Back</button>	';
-	echo'<button type="button" onclick="window.history.back()">Edit Favorite Bands</button></center>';
 }
 
 ?>
