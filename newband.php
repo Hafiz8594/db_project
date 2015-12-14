@@ -67,6 +67,7 @@ if (isset($_POST['bandname'])) {
 		</center>
 	</fieldset>
   </form>
+  <center><button onClick = "location.href='userwelcome.php'" style="width: 200px; height: 60px" type="button">Home</button></center>
 
   </body>
 
