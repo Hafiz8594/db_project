@@ -9,10 +9,16 @@ include_once 'accesscontrol.php';
   <title>Edit Favorite Bands</title>
   <link rel = "stylesheet" href = "style.css">
   <script type="text/javascript">
-		function processConfirm(){
+		function processDelete(){
 			document.forms["deleteband"].submit();
 			//setTimeout(function () { window.location.reload(); }, 30);
 			alert("The band has been succesfully removed from your favorite band list.");
+		}
+
+		function processAdd(){
+			document.forms["addband"].submit();
+			//setTimeout(function () { window.location.reload(); }, 30);
+			alert("The band has been succesfully added to your favorite band list.");
 		}
 
 	</script>
@@ -25,7 +31,6 @@ include_once 'accesscontrol.php';
 	<form style="display: inline;" name="addband" method="post" action="processaddband.php">
 		<?php
 			dbConnect('database_project');
-			//$sql = "SELECT name FROM band";
 			$sql = "SELECT DISTINCT band.name
 					FROM band
 					LEFT OUTER JOIN user_band
@@ -39,7 +44,7 @@ include_once 'accesscontrol.php';
 				}
 			echo "</select>";
 		?><br /><br />
-		<input type="button" value="Add" onclick="processConfirm()">
+		<input type="button" value="Add" onclick="processAdd()">
 	</form><br/><br />
 
 	Select the band you would like to delete from your favorite bands list:
@@ -60,7 +65,7 @@ include_once 'accesscontrol.php';
 				}
 			echo "</select>";
 		?><br /><br />
-		<input type="button" value="Delete" onclick="processConfirm()">
+		<input type="button" value="Delete" onclick="processDelete()">
 	</form>
 	<br /><center><button type="button" onclick="window.history.back()">Go Back</button>
 
