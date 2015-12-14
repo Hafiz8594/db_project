@@ -66,6 +66,12 @@ form{
 	
 	/*border:1px solid #000;"         Not really necessary*/
 }
+
+form#add_delete {
+	width: auto;
+	margin: auto;
+}
+
 legend{
 	margin-right:auto; 
 	margin-left:auto; 
