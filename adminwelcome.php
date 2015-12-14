@@ -1,4 +1,4 @@
-<?php include 'accesscontrol.php'; ?>
+<?php include 'adminaccesscontrol.php'; ?>
 
 <html>
 <head>
@@ -18,16 +18,19 @@
 					<td><button onClick = "location.href='myfavoritebands.php'" style="width: 200px; height: 60px" type="button">My Favorite Bands</button></td>
 				</tr>
 				<tr>
-					<td><button onClick = "location.href='myshows.php'" style="width: 200px; height: 60px" type="button">My Performances</button></td>
+					<td><button onClick = "location.href='myshows.php'" style="width: 200px; height: 60px" type="button">My Shows</button></td>
 					<td><button onClick = "location.href='myalbums.php'" style="width: 200px; height: 60px" type="button">My Albums</button></td>
 				</tr>
 				<tr>
 					<td><button onClick = "location.href='bandcomments.php'" style="width: 200px; height: 60px" type="button">Band Comments</button></td>
-					<td><button onClick = "location.href='newperformance.php'" style="width: 200px; height: 60px" type="button">Add Performances</button></td>
+					<td><button onClick = "location.href='performancecomments.php'" style="width: 200px; height: 60px" type="button">Performance Comments</button></td>
 				</tr>
 				<tr>
-					<td><button onClick = "location.href='newband.php'" style="width: 200px; height: 60px" type="button">Add New Bands</button></td>
-					<td><button onClick = "location.href='newalbum.php'" style="width: 200px; height: 60px" type="button">Add New Albums</button></td>
+					<td><button onClick = "location.href='bandcomments.php'" style="width: 200px; height: 60px" type="button">Add New Bands</button></td>
+					<td><button onClick = "location.href='performancecomments.php'" style="width: 200px; height: 60px" type="button">Add New Albums</button></td>
+				</tr>
+				<tr>
+					<td><button onClick = "location.href='bandcomments.php'" style="width: 200px; height: 60px" type="button">Add Performances</button></td>
 				</tr>
 			</table>
 		</center>
