@@ -67,6 +67,10 @@ form{
 	/*border:1px solid #000;"         Not really necessary*/
 }
 
+form#commentForm {
+	margin: 0;
+}
+
 form#add_delete {
 	width: auto;
 	margin: auto;
@@ -91,4 +95,9 @@ center{
 button{
 	font-size: 18;
 	font-style: bold;
+}
+
+textarea {
+	width: 375px;
+	height: 145px;
 }

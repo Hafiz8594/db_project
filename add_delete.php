@@ -67,7 +67,7 @@ include_once 'accesscontrol.php';
 		?><br /><br />
 		<input type="button" value="Delete" onclick="processDelete()">
 	</form>
-	<br /><center><button type="button" onclick="window.history.back()">Go Back</button>
+	<br /><center><button type="button" onclick="location.href='editfavoritebands.php'">Go Back</button>
 
 </body>
 </html>

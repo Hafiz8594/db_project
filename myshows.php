@@ -27,6 +27,7 @@ if (!$result) {
 	echo'You have no favorite bands listed. If you would like to add favorite bands, please visit this <a href="bands.php">link</a>.';
 } 
 else {
+	echo '<center>To edit your performances list, please click here: <a href="editperformances.php">EDIT PERFORMANCES ATTENDED</a><br /><br /></center>';
 	echo'<center><table>
 	<tr><th>Name</th><th>Date</th><th>Description</th></tr>';
 	while ($row = mysql_fetch_array($result)){
@@ -39,9 +40,10 @@ else {
 		<td>$date</td>
 		<td>$description</td></tr>";
 	}
-	echo '</table></center><br />';
-	echo'<center><button type="button" onclick="window.history.back()">Go Back</button>	';
-	echo'<button type="button" onclick="window.location(performances.php)">Edit Performances</button></center>';
+	?>
+	</table></center><br />
+	<center><button type="button" onclick="location.href='userwelcome.php'">Go Back</button>
+<?php
 }
 
 ?>

@@ -42,8 +42,10 @@ else {
 		<td>$info</td>
 		<td>$year</td></tr>";
 	}
-	echo '</table></center><br />';
-	echo'<center><button type="button" onclick="window.history.back()">Go Back</button>	';
+	?>
+	</table></center><br />
+	<center><button type="button" onclick="location.href='userwelcome.php'">Go Back</button>
+<?php
 }
 
 ?>

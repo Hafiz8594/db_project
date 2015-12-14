@@ -52,8 +52,8 @@ else {
 		echo "</tr>";
 	}
 	echo "</table>";
-	echo '<br /><center><button type="button" onclick="window.history.back()">Go Back</button>';
 	?>
+	<br /><center><button type="button" onclick="location.href='myfavoritebands.php'">Go Back</button>
 	<button type="button" onclick="location.href='add_delete.php'">Add/Delete</button></center>
 <?php
 }
